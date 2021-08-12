@@ -14,12 +14,11 @@ Annotation
 - coco --> binary mask np array --> png format save
 - format ready to feed into model
 
-## Image
+Image
 - read geotiff with tifffile --> np array
- - visualize, resize(scale)
- - 10000,10000 --> 256/512/324
- - pad, crop
- save png format
+- visualize, resize(scale)
+- pad, crop = 10000,10000 --> 256/512/324 tiles
+- save png format
 
 ## Data Pipeline
 - train (3 day)
@@ -28,4 +27,5 @@ Annotation
 	- optimizer = Adam
 	- metrics = ?
 
-## Inference / post process (3 day)
+## Inference pipeline / post process (3 day)
+- ?
