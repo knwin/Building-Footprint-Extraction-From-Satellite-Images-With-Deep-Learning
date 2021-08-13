@@ -4,8 +4,8 @@
 
 ![](Labelme%20Output%20data/label_viz.png)
 
-> This is RGB composite of UAV imagery
+> This is RGB composite of UAV imagery <br>
 ![](Labelme%20Output%20data/img.png)
 
-> This is annotations done on Labelme over UAV imagery
+> This is annotations done on Labelme over UAV imagery <br>
 ![](Labelme%20Output%20data/label.png)
