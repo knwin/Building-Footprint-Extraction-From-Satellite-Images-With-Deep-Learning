@@ -30,3 +30,39 @@ Image
 ## Inference pipeline / post process (3 day)
 - ?
 toby
+
+## To Do
+- [ ] models.py (UNet, DeepUNet)
+- [ ] dataset.py
+- [ ] loss.py
+- [ ] ANT - clean & refactor generate images function (ANT)
+- [ ] ANT - change directories of output files (create dataset, train, inference) (ANT)
+- [ ] Toby - georeference script() = georefernce(png = False, shape_file = True, tiff = True, point_file = True)
+
+### Output folder structure
+	outputs/
+	     - dataset/
+	        - images/
+	        - mask/		
+	     - model weights/ --> my_model.h5
+	     - inference outputs/
+	        - png/ --> binary_mask.png
+	        - shp/ --> shape files
+	        - tiff/ --> mask.tiff
+
+### Output folder directories
+```
+# dataset creation
+outputs/dataset/
+outputs/dataset/images/
+outputs/dataset/masks/
+
+# save model weights in this folder
+outputs/model weights/
+
+# save inference output files in separate folders
+outputs/inference outputs/
+outputs/inference outputs/png/
+outputs/inference outputs/shp/
+outputs/inference outputs/tiff/
+```
