@@ -35,8 +35,9 @@ toby
 - [ ] models.py (UNet, DeepUNet)
 - [ ] dataset.py
 - [ ] loss.py
-- [x] ANT - clean & refactor generate images function (ANT)
-- [ ] ANT - change directories of output files (create dataset, train, inference) (ANT)
+- [x] ANT - clean & refactor generate images function
+- [ ] ANT - add save weight code in Train.ipynb
+- [x] ANT - change directories of output files (create dataset, train, inference)
 - [ ] Toby - georeference script() = georefernce(png = False, shape_file = True, tiff = True, point_file = True)
 
 ### Output folder structure
