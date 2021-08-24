@@ -35,7 +35,7 @@ toby
 - [ ] models.py (UNet, DeepUNet)
 - [ ] dataset.py
 - [ ] loss.py
-- [ ] ANT - clean & refactor generate images function (ANT)
+- [x] ANT - clean & refactor generate images function (ANT)
 - [ ] ANT - change directories of output files (create dataset, train, inference) (ANT)
 - [ ] Toby - georeference script() = georefernce(png = False, shape_file = True, tiff = True, point_file = True)
 
