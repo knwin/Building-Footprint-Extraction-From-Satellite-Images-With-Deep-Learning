@@ -3,6 +3,7 @@ import tensorflow as tf
 import cv2 as cv2
 import PIL
 from PIL import Image, ImageOps
+import os
 
 
 def pad(src_img, model_input_w, model_input_h):
@@ -109,6 +110,113 @@ def resize_image(image, percent = 0.7, interpolation = None):
         new_img = cv2.resize(image, (new_width , new_height))[:,:,:]
  
     return new_img
+
+
+def get_flipped_images(image, flip_horizontal = True, flip_vertical = True):
+    """
+    Takes an image as input. Flip it horizontally and/or vertically and returns a list of flipped images.
+    
+    arguments:
+        image(PIL Image): image to be flipped
+        flip_horizontal(bool): flip the image horizontally ?
+        flip_vertical(bool):   flip the image vertically ?
+        
+    returns:
+        list: a list of flipped images
+    """
+    
+    image_list = [image]
+    
+    # flip the image horizontally
+    if flip_horizontal:
+        image_list.append(image.transpose(Image.FLIP_LEFT_RIGHT))
+    
+    # flip the image vertically
+    if flip_vertical:
+        image_list += [i.transpose(Image.FLIP_TOP_BOTTOM) for i in image_list]
+    
+    return image_list
+
+
+def get_img_name(area_name, idx, num_digit, flip_idx, angle):
+    """
+    Creates image name(e.g. area_1_0002_f0_a0)
+    
+    arguments:
+        area_name(str): area name of cropped tiles
+        idx(int): index number of tile
+        num_digit(int): total number of digits for tile index
+        flip_idx(int): 0, 1, 2, 3
+                       0 = original image(not flipped)
+                       1 = horizontal flip
+                       2 = vertical flip of 0
+                       3 = vertical flip of 1
+        angle(int): rotation angle of image
+        
+    returns:
+        name(str): complete name of current tile
+    """
+    num_zeros = num_digit - len(str(idx))
+    zeros = ''
+    for i in range(num_zeros): zeros+='0'
+    name = f'{area_name}_{zeros}{str(idx)}_f{flip_idx}_a{str(angle)}'
+
+    return name
+
+
+def generate_images(cropped_tiles, 
+                    save_dir,
+                    area_name = 'area_1',
+                    img_format = 'png',
+                    num_digit = 4,
+                    rotations = [0],
+                    flip_horizontal = False, 
+                    flip_vertical = False):
+    """
+    Save cropped tiles in a given directory.
+    
+    arguments:
+        cropped_tiles(list): a list of cropped tiles in PIL Image format
+        save_dir(str): directory to save images
+        area_name(str): area name of cropped tiles(e.g. area1, area_1, etc.)
+        img_format(str): 'png', 'jpg', etc.
+        num_digit(int): total number of digits for tile index(e.g. 5 means 00001, 6 means 000001)
+        rotations(list): a list of rotation angles (e.g. [90, 180, 270]) to rotate images and save them
+        flip_horizontal(bool): flip image horizontally ?
+        flip_vertical(bool): flip image vertically ?  
+    """
+    
+    # make directory to save images
+    os.makedirs(save_dir, exist_ok = True)
+
+    # save all images from list of cropped tiles
+    for index, tile in enumerate(cropped_tiles):
+
+        images = [tile]
+
+        # flip image if flip is set to True
+        if flip_horizontal == True or flip_vertical == True:
+            images = get_flipped_images(tile, flip_horizontal, flip_vertical)
+
+        flip_idx = 0
+
+        # for all tiles in images list (flipped or not)
+        for tile in images:
+            # rotate images and save
+            for angle in rotations:
+
+                # rotate image
+                rotated_tile = tile.rotate(angle)
+
+                # get image name format
+                img_name = get_img_name(area_name, index, num_digit, flip_idx, angle)
+
+                # save image
+                #rotated_tile.save(save_dir+'{}.{}'.format(img_name, img_format))
+                rotated_tile.save(os.path.join(save_dir,'{}.{}'.format(img_name, img_format)))
+                print(save_dir+'{}.{}'.format(img_name, img_format))
+
+            flip_idx += 1
 
 
 def reconstruct(tiles_list, img_width, img_height, model_input_w, model_input_h, numpy_output = False):
