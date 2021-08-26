@@ -25,7 +25,7 @@ def to_shapefile(imageDir,outputShapefile):
     """
     
     #Vectorization 
-    sourceRaster = gdal.Open(imgDir)
+    sourceRaster = gdal.Open(imageDir)
     band = sourceRaster.GetRasterBand(1)
     bandArray = band.ReadAsArray(1)
     outShapefile = outputShapefile
