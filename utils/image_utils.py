@@ -211,9 +211,9 @@ def generate_images(cropped_tiles,
                 img_name = get_img_name(area_name, index, num_digit, flip_idx, angle)
 
                 # save image
-                #rotated_tile.save(save_dir+'{}.{}'.format(img_name, img_format))
-                rotated_tile.save(os.path.join(save_dir,'{}.{}'.format(img_name, img_format)))
-                print(save_dir+'{}.{}'.format(img_name, img_format))
+                save_image_dir = os.path.join(save_dir,'{}.{}'.format(img_name, img_format))
+                rotated_tile.save(save_image_dir)
+                print(save_image_dir)
 
             flip_idx += 1
 
