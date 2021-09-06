@@ -12,13 +12,13 @@ There are two tracks with
 - one for those who would like to gain details insight on our project 
 
 # For those who would like to use our model, please go through 
-- 3.Inference.ipynb 
+- Inference.ipynb 
 
 # For those longing for details, please go through
-- 1. Generate Images.ipynb
-- 2. Train.ipynb
-- 3. Inference
-- 4. Geo-process.ipynb
+-  Generate Images.ipynb
+-  Train.ipynb
+-  Inference
+-  Geo-process.ipynb
 
 
 # Utils
@@ -28,5 +28,14 @@ There are two tracks with
 
 # Weights
 
-Pretrained weights can be seen here.
+Pretrained weights can be seen under weights folder
+
+# Datasets
+
+Datasets used in our training process can be found under this folder. Labelme annotation is used to produce binary mask file.
+
+<p>Bianry mask images can be exported from labelme json format using the following syntax: </p> <br> 
+
+> <code> labelme_json_to_dataset Clip_final_hlaing_thar_yar11.json -o Labelme_Output_data </code>
+
 
