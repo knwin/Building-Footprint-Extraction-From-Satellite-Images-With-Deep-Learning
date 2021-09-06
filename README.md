@@ -1,5 +1,8 @@
 ## Building Footprint Extraction from Satellite Images with Deep learning Project
 
+![](Labelme%20Output%20data/label_viz.png)
+</br>
+
 Humbly published this repo in pursuits of trying our utmost to be a great lift for Myanmar Geoinformatic and Machine learning society. Since both contributors were still at their grittiest learning phase, sincere apologies are delivered if any mistakes or inconveiences are encountered.
 
 This project aims to help beginners in both Geospatial technology and deep learning to understand and work out a particular segmentation project on their own.
