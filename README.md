@@ -1,32 +1,20 @@
-# Building-Footprint-Extraction-Practical-Project
-Practical Project for Semantic Segmentation of Building Footprint from Satellite Images
+## Building Footprint Extraction from Satellite Images with Deep learning Project
 
-## Dataset Exploration
-- Toby's dataset
-- other's dataset
+Humbly published this repo in pursuits of trying our utmost to be a great lift for Myanmar Geoinformatic and Machine learning society. Since both contributors were still at their grittiest learning phase, sincere apologies are delivered if any mistakes or inconveiences are encountered.
 
-## Annotate (1 day)
-- labelme
+This project aims to help beginners in both Geospatial technology and deep learning to understand and work out a particular segmentation project on their own.
+There are two tracks with 
+- one for using our model to extract building footprint his/her own needs
+- one for those who would like to gain details insight on our project 
 
-## preprocess (2 day)
-Annotation
-- labelme --> coco json
-- coco --> binary mask np array --> png format save
-- format ready to feed into model
+# For those who would like to use our model, please go through 
+--> 3.Inference.ipynb 
 
-Image
-- read geotiff with tifffile --> np array
-- visualize, resize(scale)
-- pad, crop = 10000,10000 --> 256/512/324 tiles
-- save png format
+# For those longing for details, please go through
+--> 1. Generate Images.ipynb
+--> 2. Train.ipynb
+--> 3. Inference
+--> 4. Geo-process.ipynb
 
-## Data Pipeline
-- train (3 day)
-	- model = UNet, Deep UNet
-	- loss = Dice Focal
-	- optimizer = Adam
-	- metrics = ?
 
-## Inference pipeline / post process (3 day)
-- ?
-toby
+
