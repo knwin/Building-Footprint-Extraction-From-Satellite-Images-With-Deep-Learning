@@ -17,4 +17,12 @@ There are two tracks with
 - 4. Geo-process.ipynb
 
 
+# Utils
+- image_utils.py (used for image preprocessing and postprocessing )
+- geoprocess.py ( used for georeferencing and shapefile conversion )
+- loss.py ( used to import custom loss function into model )
+
+# Weights
+
+Pretrained weights can be seen here.
 
