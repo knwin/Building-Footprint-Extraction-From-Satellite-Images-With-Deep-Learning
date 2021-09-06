@@ -8,13 +8,13 @@ There are two tracks with
 - one for those who would like to gain details insight on our project 
 
 # For those who would like to use our model, please go through 
---> 3.Inference.ipynb 
+- 3.Inference.ipynb 
 
 # For those longing for details, please go through
---> 1. Generate Images.ipynb
---> 2. Train.ipynb
---> 3. Inference
---> 4. Geo-process.ipynb
+- 1. Generate Images.ipynb
+- 2. Train.ipynb
+- 3. Inference
+- 4. Geo-process.ipynb
 
 
 
