@@ -1,6 +1,6 @@
 ## Building Footprint Extraction from Satellite Images with Deep learning Project
 
-<img src="/dataset/Annotation%20Data/Labelme%20Output%20data/label.png" width="550" height="350" hspace="20"/> <img src="/dataset/Annotation%20Data/Labelme%20Output%20data/img.png" width="550" height="350"/>
+<img src="/dataset/Annotation%20Data/Labelme%20Output%20data/label.png" width="400" height="350" hspace="20"/> <img src="/dataset/Annotation%20Data/Labelme%20Output%20data/img.png" width="400" height="350"/>
 
 
 </br>
