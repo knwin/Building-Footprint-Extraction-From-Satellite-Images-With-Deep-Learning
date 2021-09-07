@@ -1,69 +1,45 @@
-# Building-Footprint-Extraction-Practical-Project
-Practical Project for Semantic Segmentation of Building Footprint from Satellite Images
+## Building Footprint Extraction from Satellite Images with Deep learning Project
 
-## Dataset Exploration
-- Toby's dataset
-- other's dataset
+<img src="/files/img.png" width="250" height="200" hspace="50"> <img src="/dataset/Annotation%20Data/Labelme%20Output%20data/label.png" width="250" height="200"> 
 
-## Annotate (1 day)
-- labelme
 
-## preprocess (2 day)
-Annotation
-- labelme --> coco json
-- coco --> binary mask np array --> png format save
-- format ready to feed into model
+</br>
 
-Image
-- read geotiff with tifffile --> np array
-- visualize, resize(scale)
-- pad, crop = 10000,10000 --> 256/512 tiles
-- save png format
+# Problem statment
+Building footprints are being digitized,annotated from time to time depending on various use case in our Geoinformatic society. However, digitizing over large areas become a labour intensive work and therefore most of GIS related process are almost bottlenecked in this phase. However, with a help of emerging discipline as we all know as Deep learning, it become an easy work. Being able to use the model efficiently is the only thing we require comparing to labour intensive and time-consuming digitizing tasks.
 
-## Data Pipeline
-- train (3 day)
-	- model = UNet, Deep UNet
-	- loss = BCE Dice
-	- optimizer = Adam
-	- metrics = Precision, Recall, Dice Coef
+Humbly published this repo in pursuits of trying our utmost to be a great lift for Myanmar Geoinformatic and Machine learning society. Since both contributors were still at their grittiest learning phase, sincere apologies are delivered if any mistakes or inconveiences are encountered.
 
-## Inference pipeline / post process (3 day)
-- ?
-toby
+This project aims to help beginners in both Geospatial technology and deep learning to understand and work out a particular segmentation project on their own.
+There are two tracks with 
+- one for using our model to extract building footprint his/her own needs
+- one for those who would like to gain details insight on our project 
 
-## To Do
-- [x] models.py (UNet, DeepUNet)
-- [x] dataset.py
-- [x] loss.py
-- [x] ANT - clean & refactor generate images function
-- [x] ANT - add save weight code in Train.ipynb
-- [x] ANT - change directories of output files (create dataset, train, inference)
-- [x] Toby - georeference script() = georefernce(png = False, shape_file = True, tiff = True, point_file = True)
+# For those who would like to use our model, please go through 
+- Inference.ipynb 
 
-### Output folder structure
-	outputs/
-	     - dataset/
-	        - images/
-	        - mask/		
-	     - weights/ --> my_model.h5
-	     - inference outputs/
-	        - png/ --> binary_mask.png
-	        - shp/ --> shape files
-	        - tiff/ --> mask.tiff
+# For those longing for details, please go through
+-  Generate Images.ipynb
+-  Train.ipynb
+-  Inference
+-  Geo-process.ipynb
 
-### Output folder directories
-```
-# dataset creation
-outputs/dataset/
-outputs/dataset/images/
-outputs/dataset/masks/
 
-# save model weights in this folder
-outputs/weights/
+# Utils
+- image_utils.py (used for image preprocessing and postprocessing )
+- geoprocess.py ( used for georeferencing and shapefile conversion )
+- loss.py ( used to import custom loss function into model )
 
-# save inference output files in separate folders
-outputs/inference outputs/
-outputs/inference outputs/png/
-outputs/inference outputs/shp/
-outputs/inference outputs/tiff/
-```
+# Weights
+
+Pretrained weights can be seen under weights folder
+
+# Datasets
+
+Datasets used in our training process can be found under this folder. Labelme annotation is used to produce binary mask file.
+
+<p>Bianry mask images can be exported from labelme json format using the following syntax: </p> <br> 
+
+> <code> labelme_json_to_dataset Clip_final_hlaing_thar_yar11.json -o Labelme_Output_data </code>
+
+
