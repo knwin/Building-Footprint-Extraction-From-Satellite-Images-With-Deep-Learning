@@ -1,11 +1,11 @@
 ## Building Footprint Extraction from Satellite Images with Deep learning Project
 
-#Train Image and Label Image
+# Train Image and Label Image
 
 <img src="/files/img.png" width="250" height="200" hspace="50"> <img src="/files/label.png" width="250" height="200"> 
 
-#Predicted Image
-
+# Predicted Image
+<img src="/file/preds.png" width="250" height ="200">
 
 
 </br>
