@@ -5,7 +5,7 @@
 <img src="/files/img.png" width="250" height="200" hspace="50"> <img src="/files/label.png" width="250" height="200"> 
 
 # Predicted Image
- <img src="/files/preds.png" width="250" height="200"> 
+ <img src="/files/preds.png" width="450" height="200"> 
 
 
 </br>
